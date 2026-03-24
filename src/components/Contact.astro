@@ -1,0 +1,158 @@
+---
+---
+
+<section id="contacto" class="py-40 px-6 relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.05)_0%,transparent_70%)] -z-10"></div>
+  
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm mb-6">Conexión</h2>
+    <h3 class="text-6xl md:text-8xl font-black mb-12 tracking-tighter dark:text-white">Let's <span class="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Collaborate</span>.</h3>
+    <p class="text-xl text-gray-500 dark:text-gray-400 mb-20 max-w-2xl mx-auto font-light leading-relaxed text-balance">
+      ¿Tienes una visión audaz? Estoy listo para ayudarle a darle vida con ingeniería de precisión y diseño de clase mundial.
+    </p>
+
+    <div class="max-w-2xl mx-auto bg-white dark:bg-white/5 p-12 md:p-16 rounded-[4rem] shadow-2xl shadow-indigo-500/5 border border-gray-100 dark:border-white/10 relative">
+      <div class="absolute -top-6 -right-6 w-24 h-24 bg-indigo-600 rounded-3xl flex items-center justify-center text-white rotate-12 shadow-xl shadow-indigo-600/20">
+         <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+         </svg>
+      </div>
+
+      <form id="contact-form" class="space-y-8 text-left">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <label for="name" class="block text-xs font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3 ml-2">Nombre Completo</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name"
+              required
+              placeholder="Elon Musk"
+              class="w-full px-8 py-5 bg-gray-50 dark:bg-white/5 border border-transparent rounded-[2rem] focus:bg-white dark:focus:bg-black focus:border-indigo-500/50 transition-all outline-none text-lg dark:text-white"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-xs font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3 ml-2">Email Profesional</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              required
+              placeholder="elon@spacex.com"
+              class="w-full px-8 py-5 bg-gray-50 dark:bg-white/5 border border-transparent rounded-[2rem] focus:bg-white dark:focus:bg-black focus:border-indigo-500/50 transition-all outline-none text-lg dark:text-white"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block text-xs font-black uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3 ml-2">Tu Propuesta</label>
+          <textarea 
+            id="message" 
+            name="message"
+            required
+            rows="4" 
+            placeholder="Cuéntame sobre tu próximo gran proyecto..."
+            class="w-full px-8 py-5 bg-gray-50 dark:bg-white/5 border border-transparent rounded-[2rem] focus:bg-white dark:focus:bg-black focus:border-indigo-500/50 transition-all outline-none text-lg dark:text-white resize-none"
+          ></textarea>
+        </div>
+        <button 
+          type="submit"
+          id="submit-btn"
+          class="group w-full py-6 bg-indigo-600 text-white rounded-[2rem] font-black text-xl hover:bg-indigo-700 transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-indigo-600/20 flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+        >
+          <span id="btn-text">Enviar Iniciativa</span>
+          <svg id="btn-arrow" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+          <!-- Spinner (hidden by default) -->
+          <svg id="btn-spinner" class="hidden animate-spin w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="success-msg" class="hidden mt-8 p-6 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 rounded-3xl text-green-700 dark:text-green-400 font-bold text-center">
+        ✅ ¡Mensaje enviado con éxito! Te responderé pronto.
+      </div>
+
+      <!-- Error Message -->
+      <div id="error-msg" class="hidden mt-8 p-6 bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 rounded-3xl text-red-700 dark:text-red-400 font-bold text-center">
+        ❌ Hubo un error al enviar. Intenta de nuevo.
+      </div>
+    </div>
+    
+    <div class="mt-24 flex flex-wrap justify-center gap-x-16 gap-y-8 font-black text-lg dark:text-gray-400">
+      <a href="mailto:lead@cjran.dev" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-3">
+        <span class="w-2 h-2 bg-indigo-500 rounded-full"></span>
+        lead@cjran.dev
+      </a>
+      <a href="https://linkedin.com" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-3">
+        <span class="w-2 h-2 bg-indigo-600 rounded-full"></span>
+        LinkedIn
+      </a>
+      <a href="https://github.com" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-3">
+        <span class="w-2 h-2 bg-purple-600 rounded-full"></span>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const SUPABASE_URL = 'https://clqbpkhbtqcrvpupjhei.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNscWJwa2hidHFjcnZwdXBqaGVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzNTcyNTcsImV4cCI6MjA4OTkzMzI1N30.lhDx85QzMGZu9e35ekG2AC_CBd-TVGnW9uN2H5u5tQk';
+
+  const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const btnText = document.getElementById('btn-text');
+  const btnArrow = document.getElementById('btn-arrow');
+  const btnSpinner = document.getElementById('btn-spinner');
+  const successMsg = document.getElementById('success-msg');
+  const errorMsg = document.getElementById('error-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Hide previous messages
+    successMsg.classList.add('hidden');
+    errorMsg.classList.add('hidden');
+
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.textContent = 'Enviando...';
+    btnArrow.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/contact_submissions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      if (!response.ok) throw new Error('Error en el envío');
+
+      // Success
+      successMsg.classList.remove('hidden');
+      form.reset();
+    } catch (err) {
+      errorMsg.classList.remove('hidden');
+    } finally {
+      // Reset button state
+      submitBtn.disabled = false;
+      btnText.textContent = 'Enviar Iniciativa';
+      btnArrow.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+    }
+  });
+</script>

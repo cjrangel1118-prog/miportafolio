@@ -1,0 +1,55 @@
+---
+const skills = [
+  { name: 'Architecture', level: 95, color: 'bg-indigo-500' },
+  { name: 'React / Next.js', level: 90, color: 'bg-blue-500' },
+  { name: 'Node.js / Go', level: 85, color: 'bg-green-500' },
+  { name: 'TypeScript', level: 92, color: 'bg-indigo-400' },
+  { name: 'Cloud & DevOps', level: 80, color: 'bg-purple-500' },
+  { name: 'UI / UX Design', level: 88, color: 'bg-pink-500' },
+];
+
+const badges = ['Astro', 'Tailwind', 'PostgreSQL', 'Docker', 'Redis', 'GraphQL', 'Firebase', 'Git', 'Vite', 'Jest'];
+---
+
+<section id="habilidades" class="py-40 px-6 bg-white dark:bg-[#070708] border-y border-gray-100 dark:border-white/5 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-24 relative z-10">
+    <div>
+      <h2 class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm mb-6 text-center lg:text-left">Especialidades</h2>
+      <h3 class="text-4xl md:text-5xl font-black mb-12 dark:text-white text-center lg:text-left">Core Expertise</h3>
+      
+      <div class="space-y-8">
+        {skills.map(skill => (
+          <div class="group">
+            <div class="flex justify-between mb-3 items-end">
+              <span class="text-lg font-bold dark:text-gray-200">{skill.name}</span>
+              <span class="text-sm font-black text-indigo-600 dark:text-indigo-400 tabular-nums">{skill.level}%</span>
+            </div>
+            <div class="h-1.5 w-full bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
+              <div 
+                class={`h-full ${skill.color} rounded-full transition-all duration-1000 group-hover:opacity-80`}
+                style={`width: ${skill.level}%`}
+              ></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <div class="bg-gray-50 dark:bg-white/5 p-12 rounded-[3.5rem] border border-gray-100 dark:border-white/10 self-center">
+      <h4 class="text-2xl font-bold mb-8 dark:text-white">Ecosistema Tecnológico</h4>
+      <div class="flex flex-wrap gap-4">
+        {badges.map(badge => (
+          <span class="px-6 py-3 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl text-sm font-semibold hover:border-indigo-500 dark:hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all cursor-default">
+            {badge}
+          </span>
+        ))}
+      </div>
+      
+      <div class="mt-12 p-8 bg-indigo-600 rounded-3xl text-white">
+         <p class="text-sm font-medium leading-relaxed opacity-90 italic">
+            "Constantemente explorando nuevas fronteras tecnológicas para ofrecer soluciones que no solo funcionen, sino que inspiren."
+         </p>
+      </div>
+    </div>
+  </div>
+</section>

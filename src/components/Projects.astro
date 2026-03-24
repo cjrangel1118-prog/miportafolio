@@ -1,0 +1,75 @@
+---
+const projects = [
+  {
+    title: 'Nexus E-commerce Engine',
+    description: 'Motor de comercio electrónico de alta performance orientado a la escalabilidad masiva y optimización de conversión.',
+    tech: ['Astro 5', 'Node.js', 'Redis', 'PostgreSQL'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    title: 'Stellar Analytics Platform',
+    description: 'Sistema de analítica en tiempo real para el sector fintech con visualizaciones complejas de datos transaccionales.',
+    tech: ['TypeScript', 'D3.js', 'Go', 'GraphQL'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200'
+  },
+  {
+    title: 'Harmony Wellness App',
+    description: 'Aplicación enfocada en la salud mental de empleados corporativos con integración de inteligencia artificial para monitoreo emocional.',
+    tech: ['React Native', 'AWS Lambda', 'OpenAI'],
+    link: '#',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200'
+  }
+];
+---
+
+<section id="proyectos" class="py-40 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+      <div>
+        <h2 class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm mb-6">Showcase</h2>
+        <h3 class="text-5xl md:text-6xl font-black dark:text-white leading-tight">Proyectos con propósito.</h3>
+      </div>
+      <a href="#" class="group flex items-center gap-2 text-lg font-bold text-indigo-600 dark:text-indigo-400 transition-all hover:gap-4 underline decoration-indigo-500/20 underline-offset-8">
+        Ver Galería Completa
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12">
+      {projects.map((project, index) => (
+        <a href={project.link} class={`group relative block rounded-[3rem] overflow-hidden bg-gray-100 dark:bg-white/5 border border-gray-100 dark:border-white/10 ${index === 2 ? 'lg:col-span-2' : ''}`}>
+          <div class="relative aspect-[16/10] overflow-hidden">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-[1.5s] ease-outgrayscale group-hover:grayscale-0"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+            
+            <div class="absolute inset-0 p-12 flex flex-col justify-end text-white">
+               <div class="flex gap-3 mb-6 flex-wrap translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                {project.tech.map(t => (
+                  <span class="text-[10px] font-black uppercase tracking-widest px-4 py-1.5 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">{t}</span>
+                ))}
+              </div>
+              <h4 class="text-4xl font-black mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">{project.title}</h4>
+              <p class="text-lg text-white/70 max-w-lg mb-8 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100 line-clamp-2">
+                {project.description}
+              </p>
+              
+              <div class="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 delay-150 group-hover:scale-110">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                 </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+---
+const experiences = [
+  {
+    role: 'Staff Software Engineer',
+    company: 'Quantum Tech Solutions',
+    period: '2022 - Presente',
+    achievements: [
+      'Liderazgo en la migración de microservicios, reduciendo la latencia media en un 40%.',
+      'Optimización del pipeline de CI/CD que disminuyó el tiempo de despliegue de 15 a 4 minutos.',
+      'Mentoria a 5 desarrolladores junior, acelerando su proceso de onboarding en un 30%.'
+    ],
+    logo: 'QT'
+  },
+  {
+    role: 'Senior Full Stack Developer',
+    company: 'Innovate Global Agency',
+    period: '2019 - 2022',
+    achievements: [
+      'Desarrollo de una plataforma e-commerce head-less que gestionó +1M de transacciones mensuales.',
+      'Implementación de estrategias de caching distribuido, mejorando el TTFB en un 60%.',
+      'Rediseño completo de la arquitectura del frontend utilizando Micro-frontends.'
+    ],
+    logo: 'IA'
+  },
+  {
+    role: 'Frontend Developer',
+    company: 'Digital Spark Studio',
+    period: '2017 - 2019',
+    achievements: [
+      'Creación de un sistema de diseño interno adoptado por 4 equipos de producto diferentes.',
+      'Mejora de la accesibilidad (WCAG 2.1) alcanzando un score de 100 en Google Lighthouse.',
+      'Reducción del tamaño del bundle en un 35% mediante Lazy Loading y Tree Shaking.'
+    ],
+    logo: 'DS'
+  }
+];
+---
+
+<section id="experiencia" class="py-40 px-6 bg-[#fafafa] dark:bg-[#070708] relative">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-32">
+      <h2 class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm mb-6">Trayectoria</h2>
+      <h3 class="text-5xl md:text-6xl font-black dark:text-white">Experiencia de Impacto</h3>
+    </div>
+    
+    <div class="space-y-12">
+      {experiences.map((exp) => (
+        <div class="group relative bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 p-10 md:p-14 rounded-[3rem] hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-500 hover:-translate-y-2">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-12">
+            <div class="flex items-center gap-6">
+              <div class="w-20 h-20 bg-indigo-500/10 dark:bg-indigo-500/20 rounded-3xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-2xl font-black">
+                {exp.logo}
+              </div>
+              <div>
+                <h4 class="text-3xl font-black dark:text-white mb-1 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{exp.role}</h4>
+                <p class="text-lg text-gray-400 font-medium">@ {exp.company}</p>
+              </div>
+            </div>
+            <span class="px-6 py-2 bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 rounded-full text-sm font-bold border border-indigo-100 dark:border-indigo-500/20 tabular-nums self-start md:self-auto">
+              {exp.period}
+            </span>
+          </div>
+          
+          <ul class="space-y-6">
+            {exp.achievements.map((item) => (
+              <li class="flex gap-4 text-gray-500 dark:text-gray-400 text-lg leading-relaxed group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                <span class="text-indigo-500 mt-1.5 shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
