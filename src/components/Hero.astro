@@ -1,4 +1,5 @@
 ---
+import { personalData } from '../config';
 ---
 
 <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-6">
@@ -16,7 +17,7 @@
     </div>
 
     <h1 class="text-7xl md:text-9xl font-black tracking-tighter mb-8 leading-[0.9] text-balance">
-      Software <span class="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 bg-clip-text text-transparent">Engineer</span>
+      {personalData.role.split('|')[0]} <span class="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-800 bg-clip-text text-transparent">Engineer</span>
     </h1>
 
     <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-14 font-light leading-relaxed">
